@@ -1,0 +1,36 @@
+{"id": "ret-01", "query": "How is the pipeline view in Corvane?", "product_id": "corvane-crm", "relevant": ["R001"]}
+{"id": "ret-02", "query": "Does Corvane get expensive as the team grows?", "product_id": "corvane-crm", "relevant": ["R002"]}
+{"id": "ret-03", "query": "Is Corvane customer support fast?", "product_id": "corvane-crm", "relevant": ["R003"]}
+{"id": "ret-04", "query": "Corvane mobile app performance", "product_id": "corvane-crm", "relevant": ["R004"]}
+{"id": "ret-05", "query": "Can Corvane build custom reports?", "product_id": "corvane-crm", "relevant": ["R005"]}
+{"id": "ret-06", "query": "moving our customer spreadsheets into Corvane", "product_id": "corvane-crm", "relevant": ["R006"]}
+{"id": "ret-07", "query": "Does Corvane support SSO with Okta?", "product_id": "corvane-crm", "relevant": ["R007"]}
+{"id": "ret-08", "query": "Corvane email follow-up sequences", "product_id": "corvane-crm", "relevant": ["R008"]}
+{"id": "ret-09", "query": "how long does Corvane onboarding take", "product_id": "corvane-crm", "relevant": ["R010", "R009"]}
+{"id": "ret-10", "query": "Tikkit shared inbox and agent collisions", "product_id": "tikkit-desk", "relevant": ["R011"]}
+{"id": "ret-11", "query": "SLA escalation rules in Tikkit", "product_id": "tikkit-desk", "relevant": ["R012"]}
+{"id": "ret-12", "query": "Are Tikkit AI reply suggestions accurate?", "product_id": "tikkit-desk", "relevant": ["R013"]}
+{"id": "ret-13", "query": "Tikkit WhatsApp channel", "product_id": "tikkit-desk", "relevant": ["R014"]}
+{"id": "ret-14", "query": "Tikkit search speed with many archived tickets", "product_id": "tikkit-desk", "relevant": ["R018"]}
+{"id": "ret-15", "query": "Tikkit Slack integration", "product_id": "tikkit-desk", "relevant": ["R019"]}
+{"id": "ret-16", "query": "Plannova Gantt dependencies", "product_id": "plannova", "relevant": ["R021"]}
+{"id": "ret-17", "query": "Is Plannova easy to learn for new team members?", "product_id": "plannova", "relevant": ["R023"]}
+{"id": "ret-18", "query": "Plannova time tracking cost", "product_id": "plannova", "relevant": ["R025"]}
+{"id": "ret-19", "query": "Import issues from Jira into Plannova", "product_id": "plannova", "relevant": ["R026"]}
+{"id": "ret-20", "query": "Does the Plannova mobile app work offline?", "product_id": "plannova", "relevant": ["R027"]}
+{"id": "ret-21", "query": "Plannova client guest access", "product_id": "plannova", "relevant": ["R030"]}
+{"id": "ret-22", "query": "Ledgrove GST invoicing", "product_id": "ledgrove-books", "relevant": ["R031"]}
+{"id": "ret-23", "query": "Ledgrove bank reconciliation", "product_id": "ledgrove-books", "relevant": ["R032"]}
+{"id": "ret-24", "query": "Does Ledgrove have payroll?", "product_id": "ledgrove-books", "relevant": ["R034"]}
+{"id": "ret-25", "query": "migrating from Tally to Ledgrove", "product_id": "ledgrove-books", "relevant": ["R036"]}
+{"id": "ret-26", "query": "Ledgrove support response time", "product_id": "ledgrove-books", "relevant": ["R037"]}
+{"id": "ret-27", "query": "Does Chatterloom make up wrong answers?", "product_id": "chatterloom", "relevant": ["R043"]}
+{"id": "ret-28", "query": "Chatterloom handoff to a live agent", "product_id": "chatterloom", "relevant": ["R044"]}
+{"id": "ret-29", "query": "Chatterloom pricing at high chat volume", "product_id": "chatterloom", "relevant": ["R047"]}
+{"id": "ret-30", "query": "Chatterloom Hindi language support", "product_id": "chatterloom", "relevant": ["R048"]}
+{"id": "ret-31", "query": "Chatterloom speech-to-text voice bot", "product_id": "chatterloom", "relevant": ["R049"]}
+{"id": "ret-32", "query": "Which tools integrate with Slack?", "product_id": null, "relevant": ["R019", "R029"]}
+{"id": "ret-33", "query": "WhatsApp support", "product_id": null, "relevant": ["R014", "R045"]}
+{"id": "ret-34", "query": "mobile app problems", "product_id": null, "relevant": ["R004", "R040"]}
+{"id": "ret-35", "query": "importing data from our old tool", "product_id": null, "relevant": ["R006", "R017", "R026", "R036"]}
+{"id": "ret-36", "query": "data residency and compliance in India", "product_id": null, "relevant": ["R050"]}

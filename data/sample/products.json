@@ -1,0 +1,7 @@
+[
+  {"id": "corvane-crm", "name": "Corvane CRM", "category": "CRM", "description": "Sales pipeline and contact management for small and mid-size sales teams."},
+  {"id": "tikkit-desk", "name": "Tikkit Desk", "category": "Help Desk", "description": "Shared inbox and ticketing for customer support teams."},
+  {"id": "plannova", "name": "Plannova", "category": "Project Management", "description": "Project planning with Gantt, Kanban and resource views."},
+  {"id": "ledgrove-books", "name": "Ledgrove Books", "category": "Accounting", "description": "GST-ready accounting and invoicing for Indian businesses."},
+  {"id": "chatterloom", "name": "Chatterloom", "category": "Conversational AI", "description": "No-code AI chatbot builder for websites and WhatsApp."}
+]

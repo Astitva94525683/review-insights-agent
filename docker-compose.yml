@@ -1,0 +1,36 @@
+# Full local stack: API + PostgreSQL + Jaeger (traces) + Prometheus (metrics).
+#   cp .env.example .env   # add your model key and API keys
+#   docker compose up --build
+# API http://localhost:8000/docs (set RIA_ENV=dev to see docs) | Jaeger http://localhost:16686 | Prometheus http://localhost:9090
+services:
+  api:
+    build: .
+    env_file: .env
+    environment:
+      RIA_DATABASE_URL: postgresql+psycopg://ria:ria@db:5432/ria
+      RIA_OTEL_EXPORTER: otlp
+      RIA_OTEL_ENDPOINT: http://jaeger:4318/v1/traces
+      RIA_SAMPLE_DATA_DIR: /app/data/sample
+    ports: ["8000:8000"]
+    depends_on:
+      db: {condition: service_healthy}
+  db:
+    image: postgres:16-alpine
+    environment: {POSTGRES_USER: ria, POSTGRES_PASSWORD: ria, POSTGRES_DB: ria}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ria"]
+      interval: 5s
+      retries: 10
+    volumes: [pgdata:/var/lib/postgresql/data]
+  jaeger:
+    image: jaegertracing/all-in-one:1.62.0
+    environment: {COLLECTOR_OTLP_ENABLED: "true"}
+    ports: ["16686:16686"]
+  prometheus:
+    image: prom/prometheus:v2.55.0
+    volumes:
+      - ./deploy/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./deploy/alerts.yml:/etc/prometheus/alerts.yml:ro
+    ports: ["9090:9090"]
+volumes:
+  pgdata:

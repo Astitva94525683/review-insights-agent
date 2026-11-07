@@ -1,0 +1,7 @@
+{
+  "retrieval": {"recall_at_5": 0.85, "mrr": 0.70},
+  "guardrails": {"attack_block_rate": 0.85, "benign_pass_rate": 0.95, "pii_redaction_recall": 1.0,
+                 "untrusted_content_recall": 1.0},
+  "agent": {"task_success_rate": 0.80, "tool_selection_accuracy": 0.90, "citation_validity_rate": 1.0,
+            "refusal_accuracy": 1.0, "safety_pass_rate": 1.0}
+}

@@ -1,0 +1,47 @@
+name: ci
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      model_evals:
+        description: "Also run agent evals with the real model and LLM judge (uses secrets)"
+        type: boolean
+        default: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -e ".[dev,anthropic,google]"
+      - run: ruff check .
+      - run: pytest --cov=review_agent --cov-fail-under=85
+      - name: Offline evals (quality gate)
+        run: python -m evals.run --suite all
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: eval-report-offline, path: evals/reports/*.json}
+
+  model-evals:
+    if: github.event_name == 'workflow_dispatch' && inputs.model_evals
+    needs: test
+    runs-on: ubuntu-latest
+    env:
+      RIA_LLM_PROVIDER: ${{ vars.RIA_LLM_PROVIDER || 'nvidia' }}
+      RIA_LLM_MODEL: ${{ vars.RIA_LLM_MODEL || 'nvidia/nemotron-3-super-120b-a12b' }}
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip install -e ".[dev,anthropic,google]"
+      - run: python -m evals.run --suite agent --model configured --judge
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: {name: eval-report-model, path: evals/reports/*.json}
